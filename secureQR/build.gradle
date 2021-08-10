@@ -23,7 +23,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	compile 'com.google.zxing:zxing-parent:3.4.1'
+	implementation "com.google.zxing:core:3.4.1"
+	implementation 'com.google.zxing:javase:3.4.1'
 
 }
 

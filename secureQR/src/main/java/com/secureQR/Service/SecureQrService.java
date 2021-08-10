@@ -12,6 +12,8 @@ public interface SecureQrService {
 
     // Add isVaildQR() method
     // Add createSecureQR() method
+    // Add readSecureQRCode(File) method
+    // Add readSecureQRCode(String) method
     // Add encode, decode QR method
     // Add Hash Crypto- method
 }

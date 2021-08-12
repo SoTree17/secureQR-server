@@ -1,5 +1,6 @@
 package com.secureQR.Service;
 
+// import cryptoQR
 /**
  Purpose : Handle QR url with a hashing method to produce our project goal - the secure QR
  */

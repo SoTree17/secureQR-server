@@ -22,12 +22,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.projectlombok:lombok'
+
+	/* Cho, Zxing */
 	implementation "com.google.zxing:core:3.4.1"
 	implementation 'com.google.zxing:javase:3.4.1'
 
+	/* Kim, cryptoQR */
+	compileOnly fileTree(dir: 'ext_libs', includes:['*.jar'])
 }
 
 test {
 	useJUnitPlatform()
+}
+
+dependencies {
+	implementation 'org.projectlombok:lombok:1.18.18'
+	implementation 'org.projectlombok:lombok:1.18.18'
 }

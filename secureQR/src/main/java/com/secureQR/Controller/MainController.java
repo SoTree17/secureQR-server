@@ -1,6 +1,7 @@
 package com.secureQR.Controller;
 
 import com.secureQR.Domain.DTO.ReqDTO;
+import com.secureQR.Domain.DTO.ResDTO;
 import com.secureQR.Service.SecureQrService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,9 @@ public class MainController {
 
     /* testing sample */
     @PostMapping(value="")
-    public ResponseEntity<String> modifyURL(@RequestBody ReqDTO reqDTO){
-        String result = secQR.modifyURL(reqDTO.getReqURL());
+    public ResponseEntity<ResDTO> modifyURL(@RequestBody ReqDTO reqDTO){
+        ResDTO result = new ResDTO();
+        result.setResURL(secQR.modifyURL(reqDTO.getReqURL()));
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="secureQR-module-0.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/secureQR/ext_libs/secureQR-module-0.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

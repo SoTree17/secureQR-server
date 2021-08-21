@@ -2,6 +2,7 @@ package com.secureQR;
 
 
 import com.secureQR.Domain.DTO.ReqDTO;
+import com.secureQR.Domain.DTO.ResDTO;
 import lombok.extern.slf4j.Slf4j;
 import com.secureQR.Service.SecureQrService_Impl;
 import org.junit.jupiter.api.Test;
@@ -36,7 +37,17 @@ class SecureQrApplicationTests {
 	void test_reqDTO_instance(){
 		ReqDTO req = new ReqDTO();
 		assertNotNull(req);
-		log.info("Test : ReqDTO instance is valid");
+		log.info("Test : reqDTO instance is valid");
+	}
+	/**
+	 * 응답 데이터를 위해 사용되는 reponse DTO 인 resDTO 클래스의 객체가
+	 * 제대로 생성되는지 테스트한다.
+	 */
+	@Test
+	void test_resDTO_instance(){
+		ResDTO res = new ResDTO();
+		assertNotNull(res);
+		log.info("Test : resDTO instance is vaild");
 	}
 
 }

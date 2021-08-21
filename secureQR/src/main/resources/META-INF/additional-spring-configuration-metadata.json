@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "parsing.pattern.regexp",
+      "type": "java.lang.String",
+      "description": "Description for parsing.pattern.regexp."
+  }
+] }

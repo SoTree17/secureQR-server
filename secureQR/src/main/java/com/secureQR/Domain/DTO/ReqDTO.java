@@ -14,15 +14,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ReqDTO {
 
-    /**
-     * Add additional instance members below
-     */
-    // Information in a Request
-    private String reqURL;
-    //private String user;
+    private String reqURL;  // Information in a Request
 
-    // Instance Member for URL registered Timestamp and URL modified as well
-
-    //private LocalDateTime regDate, modDate;
+    // Add aditional method here
+    //  private String user;
+    //  private LocalDateTime regDate, modDate;
 }
 

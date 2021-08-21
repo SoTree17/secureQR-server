@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Request Data Transfer Object
+ * Response Data Transfer Object
  */
 @Data
 @Builder
@@ -14,15 +14,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ResDTO {
 
-    /**
-     * Add additional instance members below
-     */
-    // Information in a Request
-    private String resURL;
-    //private String user;
+    private String resURL;  // Information in a Request
 
-    // Instance Member for URL registered Timestamp and URL modified as well
-
-    //private LocalDateTime regDate, modDate;
+    // Add aditional method here
+    //  private String user;
+    //  private LocalDateTime regDate, modDate;
 }
 

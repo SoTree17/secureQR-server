@@ -20,12 +20,27 @@ public class MainController {
     @Autowired
     private SecureQrService secQR;
 
+
     /* testing sample */
-    @PostMapping(value="")
-    public ResponseEntity<ResDTO> modifyURL(@RequestBody ReqDTO reqDTO){
+    @PostMapping(value = "")
+    public ResponseEntity<ResDTO> modifyURL(@RequestBody ReqDTO reqDTO) {
         ResDTO result = new ResDTO();
         result.setResURL(secQR.modifyURL(reqDTO.getReqURL()));
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    /* secureQR module 라이브러리 적용 서비스 호출 */
+    @PostMapping(value = "/getDecryptedURL")
+    public ResponseEntity<ResDTO> getDecrpytedURL(@RequestBody ReqDTO reqDTO) {
+        ResDTO result = new ResDTO();
+        HttpStatus status;
+        result.setResURL(secQR.getDecryptedUrl(secQR.getParsing(reqDTO.getReqURL())));
+        if(!result.getResURL().equals("")){
+            status = HttpStatus.OK;
+        }else{
+            status = HttpStatus.BAD_REQUEST;
+        }
+        return new ResponseEntity<>(result, status);
+
+    }
 }

@@ -20,6 +20,7 @@ public class MainController {
     @Autowired
     private SecureQrService secQR;
 
+    HttpStatus status;
 
     /* testing sample */
     @PostMapping(value = "")
@@ -33,7 +34,6 @@ public class MainController {
     @PostMapping(value = "/getDecryptedURL")
     public ResponseEntity<ResDTO> getDecrpytedURL(@RequestBody ReqDTO reqDTO) {
         ResDTO result = new ResDTO();
-        HttpStatus status;
         result.setResURL(secQR.getDecryptedUrl(secQR.getParsing(reqDTO.getReqURL())));
         if(!result.getResURL().equals("")){
             status = HttpStatus.OK;

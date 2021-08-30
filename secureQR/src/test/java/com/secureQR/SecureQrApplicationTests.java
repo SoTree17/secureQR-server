@@ -1,17 +1,18 @@
 package com.secureQR;
 
-
 import com.secureQR.Domain.DTO.ReqDTO;
 import com.secureQR.Domain.DTO.ResDTO;
 import lombok.extern.slf4j.Slf4j;
 import com.secureQR.Service.SecureQrService_Impl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Slf4j
 @SpringBootTest
+@ContextConfiguration(classes = SecureQrApplication.class)
 class SecureQrApplicationTests {
 
 	@Test

@@ -9,7 +9,7 @@ public interface SecureQrService {
     /**
      * basic test method
      */
-    Matcher getParsing(String req);
+    //Matcher getParsing(String req);
     /**
      * parsing request URL
      *
@@ -19,12 +19,12 @@ public interface SecureQrService {
      * String[1] : encrypted data
      */
 
-    boolean is_encrypt(String req);
+    //boolean is_encrypt(String req);
     /**
      * @return whether encrypted request or not
      */
 
-    String getDecryptedUrl(Matcher m);
+    //String getDecryptedUrl(Matcher m);
     /**
      * get specific decrypt method by m.group(0)
      * get encrypted URL datas by m.group(1)

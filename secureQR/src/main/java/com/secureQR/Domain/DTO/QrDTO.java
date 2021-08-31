@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class QrDTO {
     private String authUrl;
     private String data;
-    private int index;
+    private int c_index;
     private int width;
     private int height;
 }

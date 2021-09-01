@@ -40,7 +40,7 @@ public class ServerController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    /* 0828 클라이언트 QR이미지 요청시 응답하기 */
+    /* Web Client - Server */
     @PostMapping(value = "/generator")
     public ResponseEntity<QrImage> generateQR(@RequestBody QrDTO qrDTO) throws Exception {
         log.info("클라이언트로부터 secureQR 이미지 생성 요청 받음");
@@ -52,8 +52,7 @@ public class ServerController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    /* TODO WRITE authQR here*/
-    // 아마 반환 ReponseEntity 형식으로 해야할 수도 있음
+    /* Android - Server */
     @PostMapping("/authQR")
     public String authQrAndResponse(@RequestBody Map<String, String> param) throws Exception {
         AuthQR authQR = new AuthQR(arr);

@@ -13,11 +13,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReqDTO {
-
     private String reqURL;  // Information in a Request
-
-    // Add aditional method here
-    //  private String user;
-    //  private LocalDateTime regDate, modDate;
 }
 

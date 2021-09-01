@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import qr.authentication.AuthQR;
 
 import java.util.Map;
 
@@ -55,8 +56,12 @@ public class ServerController {
     // 아마 반환 ReponseEntity 형식으로 해야할 수도 있음
     @PostMapping("/authQR")
     public String authQrAndResponse(@RequestBody Map<String, String> param) throws Exception {
+        AuthQR authQR = new AuthQR(arr);
+        int c_index = Integer.parseInt(param.get("c_index"));
+        int d_index = Integer.parseInt(param.get("d_index"));
+        String data = param.get("data");
 
-        return "";
+        return authQR.getOriginData(data, c_index,d_index);
     }
 
 

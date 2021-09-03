@@ -59,7 +59,7 @@ public class ServerController {
 
     /* Android - Server */
     @PostMapping("/authQR")
-    public String authQrAndResponse(@RequestBody Map<String, String> param, HttpServletRequest httpRequest) throws Exception {
+    public ResponseEntity<ResDTO> authQrAndResponse(@RequestBody Map<String, String> param, HttpServletRequest httpRequest) throws Exception {
         log.info("클라이언트로부터 AUTH QR 인증 요청 받음");
         log.info("클라이언트 IP : " + httpRequest.getRemoteAddr());
 
@@ -69,7 +69,9 @@ public class ServerController {
         int d_index = Integer.parseInt(param.get("d_index"));
         String data = param.get("data");
 
-        return authQR.getOriginData(data, c_index,d_index);
+        ResDTO res = new ResDTO();
+        res.setResURL(authQR.getOriginData(data, c_index,d_index));
+        return new ResponseEntity<>(res, HttpStatus.OK);
     }
 
     /**

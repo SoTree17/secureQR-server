@@ -52,7 +52,7 @@ public class ServerController {
 
         byte[] qr_byte = qrService.createSecureQRCode(arr, qrDTO);
         result.setBinary(qr_byte);
-        qrService.createQRImage(qr_byte, "C:\\TestQR\\qrImg\\Test3.png");
+        // qrService.createQRImage(qr_byte, "C:\\TestQR\\qrImg\\Test3.png");
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }

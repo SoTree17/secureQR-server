@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import qr.authentication.AuthQR;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
@@ -42,19 +43,19 @@ public class ServerController {
 
     /* Web Client - Server */
     @PostMapping(value = "/generator")
-    public ResponseEntity<QrImage> generateQR(@RequestBody QrDTO qrDTO) throws Exception {
+    public ResponseEntity<QrImage> generateQR(@RequestBody QrDTO qrDTO, HttpServletRequest httpRequest) throws Exception {
         log.info("클라이언트로부터 secureQR 이미지 생성 요청 받음");
+        log.info("클라이언트 IP : " + httpRequest.getRemoteAddr());
         QrImage result = new QrImage();
         result.setBinary(qrService.createSecureQRCode(arr, qrDTO));
-        //HttpHeaders header = new HttpHeaders();
-        //header.add("Content-type", "image/png");
-
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     /* Android - Server */
     @PostMapping("/authQR")
-    public String authQrAndResponse(@RequestBody Map<String, String> param) throws Exception {
+    public String authQrAndResponse(@RequestBody Map<String, String> param, HttpServletRequest httpRequest) throws Exception {
+        log.info("클라이언트로부터 AUTH QR 인증 요청 받음");
+        log.info("클라이언트 IP : " + httpRequest.getRemoteAddr());
         AuthQR authQR = new AuthQR(arr);
         int c_index = Integer.parseInt(param.get("c_index"));
         int d_index = Integer.parseInt(param.get("d_index"));

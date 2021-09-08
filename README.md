@@ -10,8 +10,9 @@
 
 #### Metohd : `POST` , `/addCrypto` 
 - 서버에 해시함수 방식, 암호화/복호화 방식에 대해 설정하는 API 요청
-해당 API를 아무나 요청하면 안되기 떄문에 현재는 HTTP BODY 에 "token" : "value" 형식으로 접근하도록 설정되어있음.
-서비스에 적합하게 JWT 적용, 또는 Spring Security 적용등이 가능
+해당 API를 아무나 요청하면 안되기 때문에 현재는 HTTP BODY 에 "token" : "value" 형식으로 접근하도록 설정되어있음.
+
+☁️ 서비스에 적합하게 JWT 적용, 또는 Spring Security 적용등이 가능
 
 #### Method : `POST` , `/generator` 
 - 클라이언트로부터 `secureQR`이미지 생성 요청을 처리하는 API 예제로서, byte[] 또는 File 객체를 반환할 수 있음. 

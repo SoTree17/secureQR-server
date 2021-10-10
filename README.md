@@ -8,7 +8,7 @@
 
 
 
-#### Metohd : `POST` , `/addCrypto` 
+#### Method : `POST` , `/addCrypto` 
 - 서버에 해시함수 방식, 암호화/복호화 방식에 대해 설정하는 API 요청
 해당 API를 아무나 요청하면 안되기 때문에 현재는 HTTP BODY 에 "token" : "value" 형식으로 접근하도록 설정되어있음.
 

@@ -53,7 +53,7 @@ public class ServerController {
         byte[] qr_byte = qrService.createSecureQRCode(arr, qrDTO);
         result.setBinary(qr_byte);
         // qrService.createQRImage(qr_byte, "C:\\TestQR\\qrImg\\Test3.png");
-
+        log.info("클라이언트에게 secureQR 이미지 반환");
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 

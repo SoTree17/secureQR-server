@@ -27,6 +27,7 @@
 
 ### how to run on server? 
 - 리눅스 기반 서버 환경에서 해당 레파지토리의 파일을 실행한다고 가정
+- 현재 아마존 웹 호스팅 AWS에서 AMI2 가상 머신을 활용
 1. 자바와 GIT 설치
 ```
 sudo yum install java-11-openjdk-devel

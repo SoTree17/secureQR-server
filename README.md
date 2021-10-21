@@ -20,7 +20,7 @@
 
  
 ## Build
-### how to run on local?
+### How to run on local?
 - 로컬 환경에서는 클라이언트와 통신하기 힘듬을 주의 
 - 자바11 이 설치 되어 있어야 함
 1. 동봉한 jar 파일을 다운로드 받음
@@ -31,12 +31,12 @@
      java -jar secureQR-0.0.1-SNAPSHOT.jar
      ```
 
-### how to use in my IDE? 
+### How to run in IntelliJ?
 1. 프로젝트를 [다운](https://github.com/SoTree17/secureQR-server-example/archive/refs/heads/main.zip)받고 IntelliJ 프로젝트로 로드
 2. InteliJ의 Gradle탭에서 Build 함.
 3. <code>secureQR/src/main/java/com/secureQR/SecureQrApplication.java</code> 를 실행하여 로컬 환경에서 테스트 가능
 
-### how to run on server? 
+### How to run on server? 
 - 리눅스 기반 서버 환경에서 해당 레파지토리의 파일을 실행한다고 가정
 - 현재 아마존 웹 호스팅 AWS에서 AMI2 가상 머신을 활용
 1. 자바와 GIT 설치
@@ -86,19 +86,56 @@ java -jar secureQR-0.0.1-SNAPSHOT.jar
 ```
 
 ## API
+### API 사용법
+로컬에서 서버 실행시 http://127.0.0.1:8080/api/v1/secureQR 기준
+
+
 ### Method : `POST` , `/addCrypto` 
 - 서버에 해시함수 방식, 암호화/복호화 방식에 대해 설정하는 API 요청
 해당 API를 아무나 요청하면 안되기 때문에 현재는 HTTP BODY 에 "token" : "value" 형식으로 접근하도록 설정되어있음.
 
 ☁️ 서비스에 적합하게 JWT 적용, 또는 Spring Security 적용등이 가능
 
+- 예시  
+아래와 같은 요청으로 암호화 방식 추가 가능  
+  현재 예시에서는 (crypto 0: AES256, 1: RSA), (hash 0: MD5, 1:SHA256) 
+
+<code> 요청 URL : http://127.0.0.1:8080/api/v1/secureQR/addCrypto</code>  
+
+`
+{  
+    "crypto" : 0,  
+    "hash" : 0,  
+    "token" : "SOTREE17_SERVER_REQUEST"   
+}  
+`
+
+
 ### Method : `POST` , `/generator` 
 - 클라이언트로부터 `secureQR`이미지 생성 요청을 처리하는 API 예제로서, byte[] 또는 File 객체를 반환할 수 있음. 
-![공소 레포트 준비](https://user-images.githubusercontent.com/54317409/132018326-60096090-bdde-44c1-9fa8-66027785dc24.png)
+![공소 레포트 준비](https://user-images.githubusercontent.com/54317409/132018326-60096090-bdde-44c1-9fa8-66027785dc24.png)   
+<br>
+- 예시  
+  아래와 같은 요청으로 secureQR 생성
+- secureQR-module 속 qr.Generator의 createSecureQRImage 메소드로 바이트 코드를 QR코드 이미지로 변환 가능
+
+<code> 요청 URL : http://127.0.0.1:8080/api/v1/secureQR/generator</code>  
+
+`
+{
+"authUrl" : "https://myserver.com",
+"c_index": 0,
+"data" : "https://github.com/SoTree17/secureQR-server-example",
+"width" : 250,
+"height" : 250
+}  
+`  
+<code>응답 (QR코드 바이트 코드) : {"binary":"iVBORw0KGgoAAAAN... } </code>
 
 ### Method : `POST`, `/authQR`
 - 안드로이드 앱 클라이언트가 특정 QR 이미지를 읽은 데이터를 HTTP BODY에 담아 보내면,
 - 해당 서버에서 본 프로젝트에서 제공하는 `secureQR` 인지 아닌지를 판단하고,
 - `secureQR`이라면 QR코드의 데이터를 복호화하여 응답하는 API 요청
 
-(그림 추가 예정)
+
+

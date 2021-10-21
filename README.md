@@ -100,7 +100,7 @@ java -jar secureQR-0.0.1-SNAPSHOT.jar
 아래와 같은 요청으로 암호화 방식 추가 가능  
   현재 예시에서는 (crypto 0: AES256, 1: RSA), (hash 0: MD5, 1:SHA256) 
 
-<code> 요청 URL : http://127.0.0.1:8080/api/v1/secureQR/addCrypto</code>  
+요청 URL : <code>http://127.0.0.1:8080/api/v1/secureQR/addCrypto</code>  
 
 `
 {  
@@ -119,7 +119,7 @@ java -jar secureQR-0.0.1-SNAPSHOT.jar
 - 예시  
   아래와 같은 요청으로 secureQR 생성
 
-<code> 요청 URL : http://127.0.0.1:8080/api/v1/secureQR/generator</code>  
+요청 URL : <code>http://127.0.0.1:8080/api/v1/secureQR/generator</code>  
 
 `
 {
@@ -130,7 +130,9 @@ java -jar secureQR-0.0.1-SNAPSHOT.jar
 "height" : 250
 }  
 `  
-<code>응답 : {"binary":"iVBORw0KGgoAAAAN... } </code>
+
+응답 : <code>{"binary":"iVBORw0KGgoAAAAN... } </code>
+
 - 응답을 BASE64로 디코딩 한 뒤에 secureQR-module 속 qr.Generator의 createSecureQRImage 메소드로 바이트 코드를 QR코드 이미지로 변환 가능
 
 ### Method : `POST`, `/authQR`

@@ -20,10 +20,21 @@
 
  
 ## Build
-### how to install?
-1. 프로젝트를 [다운](https://github.com/SoTree17/secureQR-server-example/archive/refs/heads/main.zip)받고 IntelliJ 프로젝트로 로드합니다.  
-2. InteliJ의 Gradle탭에서 Build 합니다.
-3. <code>secureQR/src/main/java/com/secureQR/SecureQrApplication.java</code> 를 실행합니다.
+### how to run on local?
+- 로컬 환경에서는 클라이언트와 통신하기 힘듬을 주의 
+- 자바11 이 설치 되어 있어야 함
+1. 동봉한 jar 파일을 다운로드 받음
+2. cmd 나 터미널을 실행
+3. 해당 jar파일 디렉토리로 이동
+4. 다음과 명령어를 입력하여 배포 파일 실행 
+     ``` sh
+     java -jar secureQR-0.0.1-SNAPSHOT.jar
+     ```
+
+### how to use in my IDE? 
+1. 프로젝트를 [다운](https://github.com/SoTree17/secureQR-server-example/archive/refs/heads/main.zip)받고 IntelliJ 프로젝트로 로드
+2. InteliJ의 Gradle탭에서 Build 함.
+3. <code>secureQR/src/main/java/com/secureQR/SecureQrApplication.java</code> 를 실행하여 로컬 환경에서 테스트 가능
 
 ### how to run on server? 
 - 리눅스 기반 서버 환경에서 해당 레파지토리의 파일을 실행한다고 가정

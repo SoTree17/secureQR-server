@@ -112,12 +112,12 @@ java -jar secureQR-0.0.1-SNAPSHOT.jar
 
 
 ### Method : `POST` , `/generator` 
-- 클라이언트로부터 `secureQR`이미지 생성 요청을 처리하는 API 예제로서, byte[] 또는 File 객체를 반환할 수 있음. 
+- 클라이언트로부터 `secureQR`이미지 생성 요청을 처리하는 API 예제. 
+- 현재 예제에서는 보안 QR코드 이미지의 byte array를 BASE64로 인코딩한 문자열 형태로 응답
 ![공소 레포트 준비](https://user-images.githubusercontent.com/54317409/132018326-60096090-bdde-44c1-9fa8-66027785dc24.png)   
 <br>
 - 예시  
   아래와 같은 요청으로 secureQR 생성
-- secureQR-module 속 qr.Generator의 createSecureQRImage 메소드로 바이트 코드를 QR코드 이미지로 변환 가능
 
 <code> 요청 URL : http://127.0.0.1:8080/api/v1/secureQR/generator</code>  
 
@@ -130,7 +130,8 @@ java -jar secureQR-0.0.1-SNAPSHOT.jar
 "height" : 250
 }  
 `  
-<code>응답 (QR코드 바이트 코드) : {"binary":"iVBORw0KGgoAAAAN... } </code>
+<code>응답 : {"binary":"iVBORw0KGgoAAAAN... } </code>
+- 응답을 BASE64로 디코딩 한 뒤에 secureQR-module 속 qr.Generator의 createSecureQRImage 메소드로 바이트 코드를 QR코드 이미지로 변환 가능
 
 ### Method : `POST`, `/authQR`
 - 안드로이드 앱 클라이언트가 특정 QR 이미지를 읽은 데이터를 HTTP BODY에 담아 보내면,

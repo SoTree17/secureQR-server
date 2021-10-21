@@ -139,6 +139,21 @@ java -jar secureQR-0.0.1-SNAPSHOT.jar
 - 안드로이드 앱 클라이언트가 특정 QR 이미지를 읽은 데이터를 HTTP BODY에 담아 보내면,
 - 해당 서버에서 본 프로젝트에서 제공하는 `secureQR` 인지 아닌지를 판단하고,
 - `secureQR`이라면 QR코드의 데이터를 복호화하여 응답하는 API 요청
+<br>
+- 예시  
+  아래와 같은 요청으로 읽은 데이터를 검증하고 복호화 된 값을 얻음
 
+요청 URL : <code>http://127.0.0.1:8080/api/v1/secureQR/authQR</code>  
+
+`
+{
+    "c_index": 0,
+    "d_index": 0,
+    "data": "4qbDZ2w3cSENWZPvPlgsBIeIGXA1xLRnvqVg0BTjnmVDiIIBxGK6HixygLyWOP3cJXH9aTQU7pqDbXKgqfSoueDvD/KVEoxKWLO2J/WrzXlkSrD23D5CV32kxSS5HGyp"
+}
+`  
+
+응답 : <code>{ "resURL": "https://github.com/SoTree17/secureQR-server-example" }</code>
+- 보안 QR코드가 올바르다면 원본 데이터를 응답으로 보내준다.
 
 

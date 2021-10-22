@@ -88,6 +88,7 @@ java -jar secureQR-0.0.1-SNAPSHOT.jar
 ## API
 ### API 사용법
 로컬에서 서버 실행시 http://127.0.0.1:8080/api/v1/secureQR 기준
+addCrypto -> generator -> authQR 순서로 실행
 
 
 ### Method : `POST` , `/addCrypto` 

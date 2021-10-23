@@ -157,4 +157,15 @@ addCrypto -> generator -> authQR 순서로 실행
 응답 : <code>{ "resURL": "https://github.com/SoTree17/secureQR-server-example" }</code>
 - 보안 QR코드가 올바르다면 원본 데이터를 응답으로 보내준다.
 
-
+## Open Source Lisence
+### Copyright 
+| Component               | Version | Homepage                               | License                    |
+| ----------------------- | ------- | -------------------------------------- | -------------------------- |
+| Zxing                   | 3.4.1   | https://github.com/zxing/zxing         | Apache-2.0 License         |
+| Gson                    | 2.8.8   | https://github.com/google/gson         | Apache-2.0 License         |
+| Okhttp                  | 3.12.2  | https://square.github.io/okhttp/       | Apache-2.0 License         |
+| Converter-gson          | 2.9.0   | https://github.com/square/retrofit     | Apache-2.0 License         |
+| Converter-jackson       | 2.9.0   | https://github.com/square/retrofit     | Apache-2.0 License         |
+| Retrofit2               | 2.9.0   | https://github.com/square/retrofit     | Apache-2.0 License         |
+| Spring-boot-starter-web | 2.5.3   | https://spring.io/projects/spring-boot | Apache-2.0 License         |
+| Junit                   | 4.13.2  | https://junit.org/junit4               | Eclipse Public License 1.0 |

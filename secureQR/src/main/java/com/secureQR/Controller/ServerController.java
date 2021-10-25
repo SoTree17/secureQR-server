@@ -90,9 +90,18 @@ public class ServerController {
 
                 if (c_num == 0) crypto = new SecureQrCryptoAES256();
                 else if (c_num == 1) crypto = new SecureQrCryptoRSA();
+                else{
+                    log.info("Not supported Crypto method");
+                    return new ResponseEntity(HttpStatus.BAD_REQUEST);
+                }
 
                 if (h_num == 0) hash = new SecureQrHashMD5();
                 else if (h_num == 1) hash = new SecureQrHashSHA256();
+                else if (h_num == 2) hash = new SecureQrHashSHA512();
+                else{
+                    log.info("Not supported Hash method");
+                    return new ResponseEntity(HttpStatus.BAD_REQUEST);
+                }
 
                 this.arr.add(hash, crypto);
                 log.info("현재 arr 사이즈 : " + arr.crypto_size());
